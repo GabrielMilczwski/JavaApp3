@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>Suas Credenciais, Por favor...</h1>
+<h2>Login</h2>
+<form action="/validar" method="post">
+    <div>
+        <label for="login">Usuário:</label>
+        <input type="text" id="login" name="login" required>
+    </div>
+    <div>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+    </div>
+    <button type="submit">Entrar</button>
+</form>
+
+<p th:style="'color: red;'" th:text="${msg}"></p>
+
+</body>
+</html>
