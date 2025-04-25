@@ -1,0 +1,30 @@
+package com.javaweb.app3.Service;
+
+import org.springframework.stereotype.Service;
+import com.javaweb.app3.Model.Usuario;
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class UsuarioService {
+
+        private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+
+        public void cadastrar(Usuario usuario) {
+            listaUsuarios.add(usuario);
+        }
+
+        public Usuario autenticar(String login, String senha) {
+            for (Usuario u : listaUsuarios) {
+                if (u.getLogin().equalsIgnoreCase(login) && u.getSenha().equals(senha)) {
+                    return u;
+                }
+            }
+            return null;
+        }
+
+        public List<Usuario> listarUsuarios() {
+            return listaUsuarios;
+        }
+    }
+
